@@ -97,6 +97,7 @@ for dir in $primer/marketing-*; do
 done
 
 go perl -pi -e 's#../marketing-#./#' $primer/marketing/index.scss
+go perl -pi -e 's#../marketing-support#../support#' $primer/marketing/*/index.scss
 
 go pushd $primer > /dev/null
 go set_json '.name' '"@primer/css"' package.json
