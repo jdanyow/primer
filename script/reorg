@@ -96,6 +96,8 @@ for dir in $primer/marketing-*; do
     go git mv $dir $primer/marketing/$name
 done
 
+go perl -pi -e 's#../marketing-#./#' $primer/marketing/index.scss
+
 go pushd $primer > /dev/null
 go set_json '.name' '"@primer/css"' package.json
 go set_json '.dependencies' '{}' package.json
